@@ -1,0 +1,41 @@
+*{
+  box-sizing:border-box;
+}
+
+#header{
+  text-align:center;
+  width:100%;
+  float:left;
+}
+
+.poke-lineup{
+  height:40vh;
+  width:59.3vw;
+  border:solid black 1px;
+  float:left;
+}
+
+.poke-lineup h3{
+  text-align:center;
+  width:100%;
+}
+
+.poke-info{
+  height:40vh;
+  width:59.3vw;
+  border:solid black 1px;
+  float:left;
+}
+
+.poke-info h3{
+  text-align:center;
+  width:100%;
+}
+
+.pokeDex{
+  float:right;
+  width:40vw;
+  height:80vh;
+  border:solid black 1px;
+  text-align:center;
+}
