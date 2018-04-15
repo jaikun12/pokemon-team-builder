@@ -13,6 +13,6 @@ Assets are obtained from the following sources:
 ..*Pokemon could only be searched in lowercase input.
 
 ## Target Features
-<input type="checkbox" checked>PokeDex integrated to PokeApi</input>
-<input type="checkbox">Save pokemons to lineup</input>
-<input type="checkbox">Modify individual pokemons from lineup</input>
+*PokeDex integrated to PokeApi
+*Save pokemons to lineup
+*Modify individual pokemons from lineup
