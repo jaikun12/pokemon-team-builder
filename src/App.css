@@ -2,17 +2,43 @@
   box-sizing:border-box;
 }
 
+html{
+  background: rgb(180,58,70);
+  background: linear-gradient(90deg, rgba(180,58,70,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.App{
+  width:80%;
+  background: #393E4F;
+  margin:0 auto;
+  font-family: 'Gugi', cursive;
+}
+
+#main-div{
+  background: #393E4F;
+}
+
 #header{
-  text-align:center;
-  width:100%;
+  text-align:left;
+  width:59.3%;
   float:left;
+  background-size:cover;
+  margin-bottom:19px;
+  background-position:center;
+  line-height:0.5;
 }
 
 .poke-lineup{
-  height:40vh;
-  width:59.3vw;
-  border:solid black 1px;
+  height:25vh;
+  width:59.3%;
   float:left;
+  background: url("assets/pokedex.png");
+  background-size:cover;
+  padding-top:15px;
+}
+
+.lineup li img{
+  max-width:87px;
 }
 
 .poke-lineup h3{
@@ -21,10 +47,15 @@
 }
 
 .poke-info{
-  height:40vh;
-  width:59.3vw;
-  border:solid black 1px;
+  height:53.5vh;
+  width:59.3%;
   float:left;
+  background: url("assets/pokedex.png");
+  background-size:cover;
+  background-position:center;
+  -webkit-box-shadow: 0 13px 6px -6px rgba(0,0,0,0.6);
+     -moz-box-shadow: 0 13px 6px -6px rgba(0,0,0,0.6);
+          box-shadow: 0 13px 6px -6px rgba(0,0,0,0.6);
 }
 
 .poke-info h3{
@@ -34,8 +65,31 @@
 
 .pokeDex{
   float:right;
-  width:40vw;
-  height:80vh;
-  border:solid black 1px;
+  width:40%;
+  height:95vh;
   text-align:center;
+  background: url("assets/pokedex.png");
+  background-size:cover;
+  -webkit-box-shadow: 0 13px 6px -6px rgba(0,0,0,0.6);
+     -moz-box-shadow: 0 13px 6px -6px rgba(0,0,0,0.6);
+          box-shadow: 0 13px 6px -6px rgba(0,0,0,0.6);
+  padding:15px;
+  padding-top:18%;
+  color:rgb(55,55,55);
+}
+
+.pokeDex button{
+  background: none;
+  border:solid black 1px;
+  font-family: 'Gugi' , segoe;
+  padding:15px;
+  border-radius:10px;
+}
+
+.lineup{
+  list-style-type:none;
+}
+
+.lineup li{
+  display:inline-block;
 }

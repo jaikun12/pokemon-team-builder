@@ -4,19 +4,17 @@ import Request from 'superagent';
 import lodash from 'lodash';
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state={
-      text: "initial text"
+      team: [],
+      info: ''
     };
+    this.addPokemon = this.addPokemon.bind(this);
   }
 
   componentWillMount(){
     this.search();
-  }
-
-  fetchPokemon(pokemon){
-    
   }
 
   componentDidMount(){
@@ -39,19 +37,32 @@ class App extends Component {
     this.search(this.refs.query.value);
   }
 
+  addPokemon(){
+    const newPokemon = {
+      monster: this.state.pokemon,
+      id: this.state.pokeId
+    }
+
+    this.setState({
+      team: this.state.team.concat(newPokemon)
+    });
+
+  }
+
+
   render() {
     var pokemonId = this.state.pokeId;
 
     var pokemonName = lodash.map(this.state.pokemon, (dispPokemon) => {
-      return <p>{dispPokemon.name}</p>;
+      return <span>{dispPokemon.name}</span>;
     });
 
     var pokemonTypes = lodash.map(this.state.types, (pokeType) => {
-      return <p>{pokeType.type.name}</p>;
+      return <span>{pokeType.type.name},</span>;
     });
 
     var pokemonAbilities = lodash.map(this.state.abilities, (pokeAbilities) => {
-      return <p>{pokeAbilities.ability.name}</p>;
+      return <span>{pokeAbilities.ability.name},</span>;
     });
 
     // var pokemonStats = lodash.map(this.state.abilities, (pokeStats) => {
@@ -63,25 +74,28 @@ class App extends Component {
   
   
     return (
-      <div className="App">
+      <div className="App" id="main-div">
+        <div className="pokeDex">
+          <p>Pokemon Name: <input ref="query" onChange={(e) => {this.updateSearch();}} type="text" name="poke"/></p>
+          <img src={sprite}/>
+            <p>ID: {pokemonId}</p>
+            <p>Name: {pokemonName}</p>
+            <p>Abilities: {pokemonAbilities}</p>
+            <p>Type: {pokemonTypes}</p>
+          <button onClick={ this.addPokemon }> Add to my team</button>
+        </div>
+
         <div id="header">
-          <h1>Pokemon League</h1>
+          <p>Hello Trainer! Welcome to the <span class="bold">Pokemon League</span>!</p>
+          <p>Feel free to use this pokedex to build your team as you go on your journey.</p>
+          <p>Good luck!</p>
         </div>
         <div className="poke-lineup">
           <h3>Pokemon Lineup</h3>
+          <PokeList team={this.state.team} />
         </div>
 
-        <div className="pokeDex">
-          <h3>PokeDex</h3>
-          <p>Hi Trainer! Use this PokeDex to search for your pokemon!</p>
-          <p>Pokemon Name: <input ref="query" onChange={(e) => {this.updateSearch();}} type="text" name="poke"/></p>
-          <img src={sprite}/>
-          {pokemonId}
-          {pokemonName}
-          {pokemonAbilities}
-          {pokemonTypes}
-
-        </div>
+        
 
         <div className="poke-info">
           <h3>Pokemon Data</h3>
@@ -110,9 +124,40 @@ class App extends Component {
     catch(err){
       console.log(err);
     }
-    
   }
 }
+
+  class PokeList extends React.Component {
+      constructor(props){
+          super(props);
+          const display = '';
+          this.displayInfo = this.displayInfo.bind(this);
+        }
+
+      displayInfo(monster){
+        this.display = monster;
+      }
+
+      render() {
+          return (
+              <ul className = "lineup">
+                {this.props.team.map(team => (
+                  <li key={team.id} onClick={ this.displayInfo(team.monster) }>
+                  <img src={team.monster.sprites.front_default}/>
+                  </li>
+                ))}
+              </ul>
+          );
+      }
+    } 
+
+  class PokeInfo extends React.Component {
+      render() {
+          return (
+              <p>wololo</p>
+          );
+      }
+  }
 
 
 export default App;
