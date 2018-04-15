@@ -10,9 +10,9 @@ Assets are obtained from the following sources:
 [Sprites] (https://pokeapi.co)
 
 ## Known Bugs
-..*Pokemon could only be searched in lowercase input.
+- Pokemon could only be searched in lowercase input.
 
 ## Target Features
-⋅⋅*PokeDex integrated to PokeApi
-⋅⋅*Save pokemons to lineup
-⋅⋅*Modify individual pokemons from lineup
+- PokeDex integrated to PokeApi
+- Save pokemons to lineup
+- Modify individual pokemons from lineup
