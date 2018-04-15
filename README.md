@@ -4,15 +4,15 @@ Hi! This is my first attempt to creating a react app. Bootstrapped with the Crea
 
 This app is currently a work-in-progress and is live at [Demo] (https://jaikun12.github.io/pokemon-team-builder/)
 
-##Assets
+## Assets
 Assets are obtained from the following sources:
 [Pokedex Background] (https://hatirem.deviantart.com/art/Pokedex-template-568334471)
 [Sprites] (https://pokeapi.co)
 
-##Known Bugs
+## Known Bugs
 ..*Pokemon could only be searched in lowercase input.
 
-##Target Features
+## Target Features
 <input type="checkbox" checked>PokeDex integrated to PokeApi</input>
 <input type="checkbox">Save pokemons to lineup</input>
 <input type="checkbox">Modify individual pokemons from lineup</input>
